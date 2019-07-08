@@ -23,7 +23,10 @@ const AppNavigator = createDrawerNavigator({
     screen: ProductScreen
   }
 }, {
-  initialRouteName: "Home"
+  initialRouteName: "Home",
+  contentOptions: {
+    activeTintColor: '#136207'
+ }
 });
 
 const AppContainer = createAppContainer(AppNavigator);

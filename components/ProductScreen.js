@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, Image } from 'react-native'
 
 export default class ProductScreen extends Component {
+    static navigationOptions = {
+        drawerLabel: 'About',
+        drawerIcon: ({ tintColor }) => (
+          <Image
+            source={require('../assets/contact-icon.png')}
+            style={[styles.icon, { tintColor: tintColor }]}
+          />      
+        ),
+      };
     render() {
         return (
             <View style = {styles.container}>

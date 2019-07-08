@@ -1,9 +1,18 @@
 //Aboutscreen.js
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Button } from 'react-native'
+import { Text, View, StyleSheet, Image, Button } from 'react-native'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 export default class Aboutscreen extends Component {
+  static navigationOptions = {
+    drawerLabel: 'About',
+    drawerIcon: ({ tintColor }) => (
+      <Image
+        source={require('../assets/about-icon.png')}
+        style={[styles.icon, { tintColor: tintColor }]}
+      />      
+    ),
+  };
   render() {
     return (
       <View style = {styles.container}>
@@ -19,4 +28,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center'
     },
+    icon: {
+      width:24,
+      height:24,
+  }
   });
