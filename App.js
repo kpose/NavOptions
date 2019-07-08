@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator, createAppContainer } from "react-navigation";
+import { createDrawerNavigator, createAppContainer } from "react-navigation";
 
 import HomeScreen from './components/HomeScreen';
 import AboutScreen from './components/AboutScreen';
@@ -12,7 +12,7 @@ export default function App() {
   );
 }
 
-const AppNavigator = createBottomTabNavigator({
+const AppNavigator = createDrawerNavigator({
   Home : {
     screen : HomeScreen 
   },
