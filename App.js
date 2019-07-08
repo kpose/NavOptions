@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 
 import HomeScreen from './components/HomeScreen';
 import AboutScreen from './components/AboutScreen';
+import ProductScreen from './components/ProductScreen';
 
 export default function App() {
   return (
@@ -11,13 +12,18 @@ export default function App() {
   );
 }
 
-const AppNavigator = createStackNavigator({
+const AppNavigator = createBottomTabNavigator({
   Home : {
     screen : HomeScreen 
   },
   About: {
     screen: AboutScreen
+  },
+  Product: {
+    screen: ProductScreen
   }
+}, {
+  initialRouteName: "Home"
 });
 
 const AppContainer = createAppContainer(AppNavigator);
